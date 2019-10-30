@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <title>Create User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container text-center">
+      <h1 class='font-weight-bold'>Create User</h1>
+      <br>
+      <form action="" method="post">
+        <input type="text" placeholder=" Username" name="username" value="{{
+          request.form.username }}"><br><br>
+         <input type="password" placeholder=" Password" name="password" value="{{
+          request.form.password }}"><br><br>
+          <input type="password" placeholder=" Key" name="key" value="{{
+           request.form.key }}"><br><br>
+        <input class="btn btn-default" type="submit" value="Create">
+      </form>
+      {% if error %}
+        <p class="error text-warning"><strong>Error:  </strong> {{ error }}</p>
+      {% endif %}
+      {% if successful %}
+        <p class="error text-warning"><strong>Message:  </strong>{{ successful }}</p>
+      {% endif %}
+      <br><br>
+        <a href='/'>Home page</a>
+        <!-- <p class="text-warning">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        {% endif %}
+      {% endwith %} -->
+      </p>
+    </div>
+  </body>
+</html>

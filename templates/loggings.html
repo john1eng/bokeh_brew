@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BREWASIS</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1 id="top">Loggings</h1><br><br>
+  <div class='container'>
+    <table class="table .table-striped">
+      <tr>
+        <th>ID</th>
+        <th>USERS</th>
+        <th>ENTERED?</th>
+        <th>TIMESTAMP (E)</th>
+      </tr>
+    {%for logging in loggings%}
+      <tr>
+        <td>{{logging.id}}</td>
+        <td>{{logging.users}}</td>
+        <td>{{logging.entered}}</td>
+        <td>{{logging.time}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+
+  <!-- <a class="btn btn-info" href="/clearLogs">Clear Loggings</a> -->
+
+  </div>
+
+</body>
+</html>
